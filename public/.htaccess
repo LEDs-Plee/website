@@ -1,6 +1,6 @@
 Authtype Basic
 AuthName "Is het toilet bezet?"
-AuthUserFile
+AuthUserFile /home/cpl67/websites/cpl67wc/.htpasswd
 Require valid-user
 
 <IfModule mod_rewrite.c>
