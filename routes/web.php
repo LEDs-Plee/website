@@ -16,4 +16,4 @@ use App\Http\Controllers\ToiletController;
 */
 
 Route::get('/', [ToiletController::class, 'show'])->name('show');
-
+Route::get('/status/{toilet}/{secret}/{status}', [ToiletController::class, 'store'])->name('store');

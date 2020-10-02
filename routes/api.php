@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/status/{toilet}/{secret}/{status}', [ToiletController::class, 'store'])->name('store');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
