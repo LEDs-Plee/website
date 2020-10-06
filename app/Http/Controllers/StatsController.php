@@ -12,4 +12,8 @@ class StatsController extends Controller
 
         return view('stats.overview', ['toilets' => $toilets]);
     }
+
+    public function download() {
+        return response()->json(Toilet::select('id', 'name')->with('visits:id,toilet_id,start,end')->get())->header('Content-Disposition', 'attachment; filename="toiletStats.json"');
+    }
 }
