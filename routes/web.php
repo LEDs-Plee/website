@@ -19,5 +19,6 @@ use App\Http\Controllers\ToiletController;
 Route::get('/', [ToiletController::class, 'show'])->name('show');
 Route::prefix('stats')->name('stats')->group(function () {
     Route::get('/', [StatsController::class, 'overview'])->name('overview');
+    Route::get('download', [StatsController::class, 'download'])->name('download');
 });
 Route::get('/status/{toilet}/{secret}/{status}', [ToiletController::class, 'store'])->name('store');
