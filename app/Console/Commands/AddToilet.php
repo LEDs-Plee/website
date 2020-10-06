@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\ToiletStatus;
+use App\Models\Toilet;
 use Illuminate\Console\Command;
 
 class AddToilet extends Command
@@ -38,7 +38,7 @@ class AddToilet extends Command
      */
     public function handle()
     {
-        $toilet = ToiletStatus::create(['name' => $this->argument('name')]);
+        $toilet = Toilet::create(['name' => $this->argument('name')]);
         $this->info("Added toilet \n Name: {$toilet->name} \n Id: {$toilet->id} \n Secret: {$toilet->secret}");
         return 0;
     }

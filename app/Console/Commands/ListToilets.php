@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\ToiletStatus;
+use App\Models\Toilet;
 use Illuminate\Console\Command;
 
 class ListToilets extends Command
@@ -38,7 +38,7 @@ class ListToilets extends Command
      */
     public function handle()
     {
-        $toilets = ToiletStatus::all();
+        $toilets = Toilet::all();
         $this->info('Toilets: ');
         foreach ($toilets as $toilet) {
             $this->info("Name: {$toilet->name} \n Id: {$toilet->id} \n Secret: {$toilet->secret}");
