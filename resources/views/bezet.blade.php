@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row">
         @foreach($toilets as $toilet)
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
                         <h4>{{ $toilet->name }}</h4>
@@ -45,13 +45,13 @@
                 </div>
             </div>
         @endforeach
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-header">
                     <h4>Wasmachine</h4>
                 </div>
                 <div class="card-body">
-                    <svg class="card-img-bottom washer {{$washer->jobState}}" xmlns="http://www.w3.org/2000/svg" width="180"
+                    <svg class="card-img-bottom washer {{$washer->jobState}}" xmlns="http://www.w3.org/2000/svg" width="200"
                          viewBox="7.5 7.5 105 125">
                         <defs>
                             <clipPath id="washer-window">
