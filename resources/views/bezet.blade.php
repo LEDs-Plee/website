@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="refresh" content="60">
     <title>Is het toilet bezet?</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -147,7 +147,10 @@
             let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((t % (1000 * 60)) / 1000);
-            el.innerHTML = (hours > 0 ? hours + ':' : '') + minutes + ':' + seconds;
+            let hourString = hours > 0 ? hours+':' : '';
+            let minuteString = (hours > 0 ? minutes.toString().padStart(2, '0') : minutes) + ':';
+            let secondString = seconds.toString().padStart(2, '0')
+            el.innerHTML = hourString+minuteString+secondString;
             if (t < 0) {
                 clearInterval(x);
                 el.innerHTML = 'Finished';
