@@ -129,7 +129,7 @@
                             <use xlink:href="#laundry" transform="translate(0,0)"></use>
                         </g>
                         <text id="countdown" x="60" y="83"
-                              text-anchor="middle">{{ $washer->state == 'stop' ? 'Finished' : $washer->timeLeft->minutes.':'.$washer->timeLeft->seconds }}</text>
+                              text-anchor="middle">{{ $washer->state == 'stop' ? 'Finished' : ' Loading' }}</text>
 
                     </svg>
                 </div>
