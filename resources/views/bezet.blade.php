@@ -139,7 +139,7 @@
 </div>
 @if($washer->state != 'stop')
     <script>
-        let endTime = new Date('{{$washer->end}}').getTime();
+        let endTime = new Date('{{$washer->end->toISOString()}}').getTime();
         let el = document.getElementById('countdown');
         let x = setInterval(_ => {
             let now = new Date().getTime();
