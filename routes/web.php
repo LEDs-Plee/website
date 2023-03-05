@@ -23,11 +23,11 @@ use App\Http\Controllers\ToiletController;
 
 Auth::routes();
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 //Full user routes
 Route::middleware(['auth', 'verified', 'approved'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     //Stats routes
     Route::controller(StatsController::class)->prefix('stats')->name('stats')->group(function () {
