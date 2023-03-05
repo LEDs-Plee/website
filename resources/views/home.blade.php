@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    You need to be logged in to use this website.
+                        <a href="{{ route('register') }}">Register</a>
+                        or
+                        <a href="{{ route('login') }}">Login</a>.
                 </div>
             </div>
         </div>

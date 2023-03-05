@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class Toilet extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $fillable = ['name'];
 
     protected static function booted() {
         static::creating(function ($toilet) {
             $toilet->free = false;
-            $toilet->secret = Str::random(10);
+            $toilet->generateSecret();
         });
     }
 
@@ -31,5 +32,9 @@ class Toilet extends Model
 
     public function duration() {
         return Visit::select(DB::raw('AVG(TIMESTAMPDIFF(SECOND,start,end)) as duration'))->where('toilet_id', $this->id)->whereNotNull('end')->first()->duration;
+    }
+
+    public function generateSecret() {
+        $this->secret = Str::random(10);
     }
 }
