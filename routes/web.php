@@ -22,3 +22,7 @@ Route::prefix('stats')->name('stats')->group(function () {
     Route::get('download', [StatsController::class, 'download'])->name('download');
 });
 Route::get('/status/{toilet}/{secret}/{status}', [ToiletController::class, 'store'])->name('store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
