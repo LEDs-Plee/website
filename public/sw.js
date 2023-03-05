@@ -7,7 +7,7 @@ self.addEventListener("activate", function(event) {
 });
 
 self.addEventListener("push", function(event) {
-    console.log(event.data);
+    console.log(event.data.json());
     if (!(self.Notification && self.Notification.permission === 'granted')) {
         return;
     }
