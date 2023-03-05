@@ -75,7 +75,9 @@
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i id="push-toggle" class="bi bi-bell-fill"></i>
+                                <i id="push-toggle" class="bi bi-bell-fill"
+                                   data-bs-toggle="tooltip" data-bs-title="Enable notifications on this device"
+                                > Disabled</i>
                             </a>
                         </li>
                         <li class="nav-item dropdown">

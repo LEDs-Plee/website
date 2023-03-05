@@ -23,9 +23,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a class="btn {{ auth()->user()->notify_washer ? 'btn-danger' : 'btn-primary' }}"
+                <p id="notify-alert">First enable notifications on this device using the bell in the top right.</p>
+                <a id="notify-washer" class="disabled btn {{ auth()->user()->notify_washer ? 'btn-danger' : 'btn-primary' }}"
                    href="{{route('user.notify_washer')}}">Notify washer</a>
-                <a class="btn {{ auth()->user()->notify_toilet ? 'btn-danger' : 'btn-primary' }}"
+                <a id="notify-toilet" class="disabled btn {{ auth()->user()->notify_toilet ? 'btn-danger' : 'btn-primary' }}"
                    href="{{route('user.notify_toilet')}}">Notify toilet</a>
             </div>
 
