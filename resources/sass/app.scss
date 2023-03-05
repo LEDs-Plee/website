@@ -6,3 +6,102 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.washer {
+    @keyframes turn {
+        from {
+            stroke-dashoffset: 188.5px;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes centrifuge {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(5px, 5px) rotate(5deg);
+        }
+        50% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        75% {
+            transform: translate(-5px, 5px) rotate(-5deg);
+        }
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+    }
+
+    @keyframes bubbling {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-60px);
+        }
+    }
+
+    @keyframes wiggling {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(5px);
+        }
+    }
+
+    @keyframes flow {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-72px);
+        }
+    }
+
+    @keyframes washing {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-70px);
+        }
+    }
+
+    #flowing-water {
+        animation: flow 1s linear infinite;
+    }
+
+    #washing-water {
+        display: none;
+        animation: washing 5s ease-in alternate infinite;
+    }
+    &.rinse #washing-water {
+        display: inherit;
+    }
+
+    #circlepath {
+        stroke-dasharray: 188.5px;
+        stroke-dashoffset: 188.5px;
+    }
+
+    #wash-bubbles {
+        display: none;
+        animation: bubbling 4s linear forwards infinite;
+    }
+
+    &.wash #wash-bubbles {
+        display: inherit;
+    }
+
+    #wiggle-bubbles {
+        animation: wiggling .5s ease-in-out alternate infinite;
+    }
+
+    &.spin {
+        animation: centrifuge 0.2s linear infinite;
+    }
+}
