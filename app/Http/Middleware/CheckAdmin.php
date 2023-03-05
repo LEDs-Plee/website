@@ -15,7 +15,7 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!auth()->user()->admin) {
+        if(!(auth()->user() && auth()->user()->admin)) {
             abort(403, 'Only administrators can visit this page.');
         }
         return $next($request);
