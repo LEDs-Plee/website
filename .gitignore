@@ -13,3 +13,4 @@ yarn-error.log
 .htpasswd
 
 .idea/
+.DS_Store

@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Madagasbar website",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "img/logo/madagasbar@0.25x.png",
+      "sizes": "375x375",
+      "type": "image/png"
+    }
+  ],
+  "name": "Madagasbar",
+  "short_name": "Madagasbar",
+  "start_url": "/"
+}
